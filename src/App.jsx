@@ -5,6 +5,7 @@ import {ScrollTrigger, SplitText} from "gsap/all";
 import gsap from "gsap";
 import Showcase from "./components/Showcase";
 import Performance from "./components/Performance";
+import Features from "./components/Features";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -16,6 +17,7 @@ const App = () => {
     <Product/>
     <Showcase/>
     <Performance/>
+    <Features/>
     </main>
   );
 };

@@ -181,7 +181,7 @@ body {
   }
 
   #showcase {
-    @apply relative min-h-[110vh] lg:min-h-[120vh];
+    @apply relative min-h-[140vh] lg:min-h-[160vh];
 
     .media {
       @apply relative lg:overflow-hidden;
@@ -224,7 +224,7 @@ body {
   }
 
   #performance {
-    @apply w-dvw h-full overflow-hidden pt-24 lg:pt-32 flex flex-col items-center relative;
+    @apply w-dvw h-full overflow-hidden pt-24 lg:pt-32 flex flex-col items-center relative z-20;
 
     h2 {
       @apply font-semibold text-3xl lg:text-6xl text-white max-w-2xl text-center;
