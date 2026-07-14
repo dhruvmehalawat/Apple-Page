@@ -1,15 +1,14 @@
 import { useRef } from "react";
 import { useGSAP } from "@gsap/react";
 import { gsap } from "gsap";
-import { performanceImages, performanceImgPositions } from "../../constants/index.js";
+import { performanceImages, performanceImgPositions } from "../constants/index.js";
 import {useMediaQuery} from "react-responsive";
 
 const Performance = () => {
-
     const isMobile = useMediaQuery({ query: "(max-width: 1024px)" });
-    const sectionRef = useRef(null); 
+    const sectionRef = useRef(null);
 
-       useGSAP(
+    useGSAP(
         () => {
             const sectionEl = sectionRef.current;
             if (!sectionEl) return;
@@ -42,10 +41,12 @@ const Performance = () => {
                     start: "top bottom",
                     end: "bottom top",
                     scrub: 1,
+                
                     invalidateOnRefresh: true,
                 },
             });
 
+            // Position Each Performance Image
             performanceImgPositions.forEach((item) => {
                 if (item.id === "p5") return;
 
@@ -60,16 +61,15 @@ const Performance = () => {
 
                 tl.to(selector, vars, 0);
             });
-
         },
-        { scope: sectionRef, dependencies: [isMobile]}
+        { scope: sectionRef, dependencies: [isMobile] }
     );
 
-  return (
-   <section id="performance" ref={sectionRef}>
-    <h2>Next-level graphics performance. Game on.</h2>
-    
-        <div className="wrapper">
+    return (
+        <section id="performance" ref={sectionRef}>
+            <h2>Next-level graphics performance. Game on.</h2>
+
+             <div className="wrapper">
                 {performanceImages.map((item, index) => (
                     <img
                         key={index}
@@ -79,24 +79,22 @@ const Performance = () => {
                     />
                 ))}
              </div>
-             
-        <div className="content">
+
+            <div className="content">
                 <p>
                     Run graphics-intensive workflows with a responsiveness that keeps up
                     with your imagination. The M4 family of chips features a GPU with a
                     second-generation hardware-accelerated ray tracing engine that renders
-                    images faster, so{"  "}     
+                    images faster, so{" "}
                     <span className="text-white">
             gaming feels more immersive and realistic than ever.
-          </span>{"  "}</p><p className=" pt-6">
-                         And Dynamic Caching optimizes fast on-chip memory to dramatically
+          </span>{" "}
+                    And Dynamic Caching optimizes fast on-chip memory to dramatically
                     increase average GPU utilization — driving a huge performance boost
                     for the most demanding pro apps and games.
                 </p>
             </div>
-   
-   </section>
-  );
-};
-
-export default Performance;
+        </section>
+    )
+}
+export default Performance
