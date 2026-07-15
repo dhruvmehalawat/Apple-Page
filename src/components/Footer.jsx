@@ -7,15 +7,13 @@ const Footer = () => {
             <img src="/logo.svg" alt="Apple Logo" />
         </div>
         <hr />
-        <div className="info">
-            <p>Copyright © 2024 Apple Inc. All rights reserved.</p>
         <div className="links">
+           <p>Copyright © 2024 Apple Inc. All rights reserved.</p>
             <ul>
                 {footerLinks.map((link) => (
                     <li key={link.label}><a href={link.link}>{link.label}</a></li>
                 ))}
             </ul>
-        </div>
         </div>
     </footer>
   );
